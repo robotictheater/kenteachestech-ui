@@ -1,0 +1,46 @@
+<div class="w3-container w3-center" style="max-width:600px; margin:60px auto;" id="registerForm">
+  <div class="w3-card-4">
+    <header class="w3-container">
+      <h3>Ken Teaches Tech Classroom</h3>
+      <p><b>Parent Account Registration</b></p>
+    </header>
+    <div class="w3-container __px-3 __pb-3">
+      <div class="w3-row __mb-2">
+        <div class="w3-col w3-half">      
+          <input type="text" class="w3-input" placeholder="First Name" id="firstName" name="first_name" required />          
+        </div>
+        <div class="w3-col w3-half">      
+          <input type="text" class="w3-input" placeholder="Last Name" id="lastName" name="last_name" required />          
+        </div>
+      </div>
+      
+      <div class="w3-row __mb-2">
+        <div class="w3-col">      
+          <input type="text" class="w3-input" placeholder="Email" id="email" name="email" required />
+        </div>
+      </div>
+      <div class="w3-row __mb-2">
+        <div class="w3-col">      
+          <input type="text" class="w3-input" placeholder="Confirm Email" id="confirmEmail" name="confirm_email" required />
+        </div>
+      </div>
+
+
+      <div id="sixDigitPasscodeContainer" class="w3-hide w3-text-red w3-row __mb-2">
+        <div class="w3-col">
+          <p class="w3-left-align">Please check your inbox for an email containing your 6 digit login passcode and enter it below.</p>
+          <input type="text" class="w3-input" placeholder="Your 6 digit passcode" id="passcode" name="passcode" />
+        </div>
+      </div>
+      
+      <div class="w3-row">
+        <div class="w3-col">
+          <button class="w3-btn w3-blue" onclick="__.js.register();" id="registerButton">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row">
+    <div class="w3-col __mt-2"><a href="/login" class="w3-text-red">Already have an account? Login here.</a></div>
+  </div>
+</div>

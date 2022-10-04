@@ -274,7 +274,7 @@ var __ = {
     els = document.querySelectorAll("#" + id + " input, #" + id + " select, #" + id + " textarea, #" + id + " range");
 
     var isInvalid = false;
-    function invalidFieldClass() { return ((__.config["invalid_field_class"]) ? __.config["invalid_field_class"] : "_is-invalid"); }
+    function invalidFieldClass() { return ((__.config["invalid_field_class"]) ? __.config["invalid_field_class"] : "__is-invalid"); }
 
     els.forEach(function(el) {
       el.classList.remove(invalidFieldClass());
@@ -322,7 +322,7 @@ var __ = {
 
     var isInvalid = false;
 
-    function invalidFieldClass() { return ((__.config["invalid_field_class"]) ? __.config["invalid_field_class"] : "_is-invalid"); }
+    function invalidFieldClass() { return ((__.config["invalid_field_class"]) ? __.config["invalid_field_class"] : "__is-invalid"); }
 
     if (typeof ids === "string") {
       ids = [ids];
@@ -391,6 +391,7 @@ var __ = {
   getFormData: function(id) {
     var dtr = {};
     document.querySelectorAll("#" + id + " input, #" + id + " select, #" + id + " textarea, #" + id + " range").forEach(function(el) {
+      el.value = el.value.trim();
 
       if ((el.getAttribute("type") !== "checkbox" && el.getAttribute("type") !== "radio") || (el.getAttribute("type") === "checkbox" && el.checked) || (el.getAttribute("type") === "radio" && el.checked)) {
         if (typeof dtr[el.name] === "undefined") {
@@ -586,17 +587,34 @@ var __ = {
         }
       }
     }
+  },
+  toast: function(m, c) {
+
+    if (document.getElementById("__toast")) {
+      document.getElementById("__toast").parentNode.removeChild(document.getElementById("__toast"));
+    }
+
+    document.body.insertAdjacentHTML("beforeend", '<div id="__toast">' + m + '</div>');
+
+    if (!c) {
+      c = "showToast";
+    } else {
+      c += " showToast";
+    }
+
+    document.getElementById("__toast").className = c;
+    setTimeout(function() { document.getElementById("__toast").className = document.getElementById("__toast").className.replace("showToast", ""); }, 3000);
   }
 
 };
 
-window._toast = function(m, c) {
+window.__toast = function(m, c) {
 
-  if (document.getElementById("_toast")) {
-    document.getElementById("_toast").parentNode.removeChild(document.getElementById("_toast"));
+  if (document.getElementById("__toast")) {
+    document.getElementById("__toast").parentNode.removeChild(document.getElementById("__toast"));
   }
 
-  document.body.insertAdjacentHTML("beforeend", '<div id="_toast">' + m + '</div>');
+  document.body.insertAdjacentHTML("beforeend", '<div id="__toast">' + m + '</div>');
 
   if (!c) {
     c = "showToast";
@@ -604,8 +622,8 @@ window._toast = function(m, c) {
     c += " showToast";
   }
 
-  document.getElementById("_toast").className = c;
-  setTimeout(function() { document.getElementById("_toast").className = document.getElementById("_toast").className.replace("showToast", ""); }, 3000);
+  document.getElementById("__toast").className = c;
+  setTimeout(function() { document.getElementById("__toast").className = document.getElementById("__toast").className.replace("showToast", ""); }, 3000);
 }
 
 window.isMobile = function() {

@@ -1,0 +1,27 @@
+<div class="page-banner __py-2 w3-text-white">
+  <div class="w3-container thin-container">
+    <h1>My Students</h1>
+  </div>
+</div>
+
+<div class="__mt-3 w3-container thin-container">
+  <div class="w3-row">
+    <div class="w3-col w3-right-align">
+      <button class="w3-btn  w3-blue" onclick="__.routeTo('/classroom/students/details');">Add Student</button>
+    </div>
+  </div>
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">      
+      <div id="studentsHolder">
+        <p id="noStudentsMessage" class="w3-center __mt-3">You have not added any students yet. Click the "Add Student" button to continue.</p>
+        <div id="studentGrid" class="w3-hide" w3-repeat="students">
+          
+          <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger" onclick="__.routeTo('/classroom/students/details/{{username}}')">
+            {{first_name}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

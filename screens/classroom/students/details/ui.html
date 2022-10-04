@@ -1,0 +1,75 @@
+<div class="page-banner __py-2 w3-text-white">
+  <div class="w3-container thin-container">
+    <h1>My Students</h1>
+  </div>
+</div>
+
+<div id="studentDetails" class="__mt-3 w3-container thin-container">
+  
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">      
+      <h3>Student Details</h3>
+    </div>
+  </div>
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">     
+    <label>First Name</label>
+     <input type="text" id="firstName" name="first_name" placeholder="First Name" class="w3-input" />
+    </div>
+  </div>
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">
+      <label>What Pronoun Should I Use When Referring To The Student?</label>
+     <input type="text" id="pronoun" name="pronoun" placeholder="He, She, etc..." class="w3-input" />
+    </div>
+  </div>
+  
+  <div class="w3-row __mt-3">
+    <div class="w3-col">
+      <label>Username</label>
+     <input type="text" id="username" name="username" placeholder="Letters, numbers, dashes and underscores only.  Once set this value can not be changed" class="w3-input" onchange="__.js.checkUsername();" />
+      <label class="w3-text-grey"></label>
+    </div>
+  </div>
+  <div class="w3-row __mt-3">
+    <div class="w3-col">
+      <label>Password</label>
+     <input type="password" id="password" name="password" placeholder="Password" class="w3-input" />
+    </div>
+  </div>
+  <div class="w3-row __mt-3">
+    <div class="w3-col">
+      <label>Confirm Password</label>
+     <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm Password" class="w3-input" />
+    </div>
+  </div>
+  <div class="w3-row __mt-3">
+    <div class="w3-col">    
+      <label>Student Age</label>
+      <select id="age" name="age" class="w3-input w3-white">
+        <option>Select</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="w3-row __mt-5">
+    <div class="w3-col w3-center">
+      <button class="w3-btn  w3-grey __mr-2" onclick="__.routeTo('/classroom/students');">Cancel</button>
+      <button class="w3-btn  w3-blue" id="saveButton" onclick="__.js.save();">Save</button>
+    </div>
+  </div>  
+
+  
+</div>

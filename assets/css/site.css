@@ -1,8 +1,10 @@
 body {
-      font-family: 'Raleway', sans-serif;
       margin: 0;
       padding: 0;
+}
 
+body, h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat','Raleway', sans-serif !important;
 }
 
 #navbar{
@@ -13,7 +15,7 @@ body {
 a,
 a:visited,
 a:hover {
-  color: #daaf00;
+  color: #ff5005;
 }
 
 p {
@@ -60,7 +62,7 @@ hr{
   width:100%;
   max-width: 1200px;
   margin:0 auto;
-  border: 1px solid #fc7b7b;
+  border: 1px solid #ababab;  /*#fc7b7b;*/
 }
 
 .lite{
@@ -84,4 +86,26 @@ hr{
 
 .hr-grey{
   border: 1px solid #e3e3e3;
+}
+
+.nav a{
+  color:#000;
+}
+
+.page-banner{
+  background-color:#0090ff;
+  color:#ffffff;
+}
+.page-banner h1{
+  font-size:30px;
+  color:#ffffff !important;
+}
+
+.thin-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.page-banner a{
+  color:#ffffff !important;
 }

@@ -4,8 +4,6 @@
 <head>
   <title>Ken Teaches Tech - Helping students of all ages learn programming, video game design & robotics.</title>
   <meta name="description" content="Helping students of all ages learn programming, video game design and robotics." />
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="shortcut icon" href="https://s3.amazonaws.com/kensapps/favicon.png">
@@ -14,175 +12,15 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway|Montserrat' rel='stylesheet' type='text/css'>  
   <link rel="stylesheet" href="/assets/css/ducttape.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  
+  <script src="/assets/js/w3.js"></script>
+  <script src="https://unpkg.com/realm-web/dist/bundle.iife.js"></script>
+  <script src="/assets/js/db.js"></script>
 
-
+  <script src="/assets/js/ducttape.js"></script>
+  <script src="/assets/js/routes.js"></script>    
 </head>
 
-<body>
-
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-white" id="navbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide" id="logo">Ken Teaches Tech</a>
-      <!-- Right-sided navbar links -->
-      <div class="w3-right w3-hide-small">
-        <a href="#about" class="w3-bar-item w3-button">About</a>
-        <a href="#work" class="w3-bar-item w3-button">Paths</a>
-        <a href="#team" class="w3-bar-item w3-button">Classes</a>
-        <a href="#team" class="w3-bar-item w3-button">How It Works</a>
-        <a href="#contact" class="w3-bar-item w3-button">Private Tutoring</a>
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-      </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-        onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </div>
-
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
-    style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Paths</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Classes</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">How It Works</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">Private Tutoring</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
-  </nav>
-  <div class="w3-container">
-    <section id="about">
-
-      <div class="w3-row w3-center">
-        <h2>Is Your Child Interested In<br><strong>Programming, Website Design, Video Game Development, 3D
-            Printing,
-            Electronics or Robotics?</strong></h2>
-        <p class="lead">I provide asyncronous teacher-guided classes that allow your child to learn at their own pace
-          and on a schedule that fits your family.</p>
-        <p><b>Asyncronous does not mean alone!</b> Help is only a click away. With each class, I am there to
-          guide the student, answer questions, provide feedback, grade projects and make sure they get the most out of
-          each
-          lesson. And as the parent, you get regular reports on your childs progress.</span>
-        </p>
-      </div>
-      <hr class="_my-10">
-      <div class="w3-row">
-        <h2 class="w3-center">About Me</h2>
-        <div class="w3-col m4 l3">
-          <img src="https://s3.amazonaws.com/ikickboxer.com/files/ken.bw.400.jpg" id="headshot" alt="#">
-        </div>
-        <div class="w3-col m8 l9">
-          <p>I have an education in electronics and software engineering, and have spent the past
-            two decades building everything from websites to robots. Mobile apps to video games. Smart-devices to
-            machine
-            learning systems.</p>
-          <p>As homeschooling family, the past ten years has been spent with my wife (who is a state certified teacher)
-            working
-            together to educate our three children.</p>
-          <p>I now focus on developing fun and engaging technology
-            coursework for children ages 10 to 18.</p>
-          <p>When not in front of my laptop, my favorite thing to do is spend time with my family.</p>
-
-        </div>
-      </div>
-    </section>
-    <hr>
-    <section>
-      <h2 class="w3-center">Popular Paths</h2>
-      <p>Think of "Paths" like college majors. While multiple paths may share a common "Intro to programming" starting
-        point, as the student progresses
-        the specific classes they take will be dependent on their interests. Below I have assembled some popular
-        course paths that you could follow. However you are not limited to a pre-defined set of classes and choose your
-        own path.</p>
-
-      <h3>Website Design & Development</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
-      <ul>
-        <li>How The Internet Actually Works (Internet, websites, browsers)</li>
-        <li>Introduction to HTML & CSS</li>
-        <li>Introduction to Programming With Javascript</li>
-        <li>Modern Website Design</li>
-        <li>Introduction to Backend Development With Javascript</li>
-      </ul>
-
-
-      <h3>Video Game Design & Development</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
-
-      <h3>Electronics</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
-
-      <h3>Robotics</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2 class="w3-center">Available Classes</h2>
-
-      <div class="w3-card _px-2 _py-2 _mb-4">
-        <h4>Beginner Classes</h4>
-        <ul>
-          <li>Introduction To HTML & CSS</li>
-          <li>Introduction To Programming With Javascript</li>
-          <li>Introduction To 3D Printing</li>
-          <li>Introduction To Video Game Design & Development</li>
-          <li>Electronics 101</li>
-          <li>Introduction To Embedded Devices</li>
-        </ul>
-      </div>
-
-      <div class="w3-card _px-2 _py-2 _mb-4">
-        <h4>Intermediate Classes</h4>
-      </div>
-
-      <div class="w3-card _px-2 _py-2 _mb-4">
-        <h4>Advanced Classes</h4>
-      </div>
-    </section>
-  </div>
-
-
-
-
-
-  <script>
-    var mySidebar = document.getElementById("mySidebar");
-
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-    }
-  </script>
-</body>
-
+<body></body>
+<script src="/assets/js/site.js"></script>
 </html>
