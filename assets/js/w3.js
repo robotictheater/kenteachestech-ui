@@ -327,7 +327,6 @@ w3.dataObject = {},
           if (i === repeatObj.length) {
             arr[j].parentNode.replaceChild(rowClone, arr[j])
           } else if (arr[j].parentNode) {
-            console.log(arr[j].parentNode)
             arr[j].parentNode.insertBefore(rowClone, arr[j])
           }
         }

@@ -1,6 +1,13 @@
 __.models.accounts = {
   data: null,
+  currentStudent: function() {
+    if (__.models.accounts.data.session.username) {
+      return __.models.accounts.data.students[__.models.accounts.data.session.username];
+    } else {
+      return false;
+    }
 
+  },
   /**************************************************
     CREATE a new account when registering
     dataToSend
@@ -73,7 +80,7 @@ __.models.accounts = {
     });
   },
 
-  addStudent:function(dataToSave){
+  addStudent: function(dataToSave) {
     return new Promise(function(resolve, reject) {
       MONGOREALM.user.functions.accountStudentAdd(localStorage.getItem("session_id"), dataToSave).then((r) => {
         if (r) {
@@ -85,6 +92,33 @@ __.models.accounts = {
         }
       }).catch(reject);
     });
+  },
+
+  verifyUsernamePassword: function(dataToSend) {
+    return new Promise(function(resolve, reject) {
+      MONGOREALM.user.functions.verifyUsernamePassword(dataToSend).then((r) => {
+        if (r) {
+          if (r.success && r.data && r.data.session_id) {
+            resolve(r.data);
+          } else {
+            reject(((r && r.details) ? r.details : ""));
+          }
+        }
+      }).catch(reject);
+    });
+  },
+
+  enrollStudent: function(courseId) {
+    return new Promise(function(resolve, reject) {
+      MONGOREALM.user.functions.accountStudentEnroll(localStorage.getItem("session_id"), courseId).then((r) => {
+        if (r) {
+          if (r.success) {
+            resolve();
+          } else {
+            reject(((r && r.details) ? r.details : ""));
+          }
+        }
+      }).catch(reject);
+    });
   }
-  
 };

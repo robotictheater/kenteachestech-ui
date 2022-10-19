@@ -53,8 +53,15 @@ body{margin:0; padding:0;}
 .__my-4{margin-top:40px; margin-bottom:40px;}
 .__my-5{margin-top:50px; margin-bottom:50px;}
 .__my-6{margin-top:60px; margin-bottom:60px;}
-
 .__my-10{margin-top:100px; margin-bottom:100px;}
+
+.__m-0{margin:0px;}
+.__m-1{margin:10px;}
+.__m-2{margin:20px;}
+.__m-3{margin:30px;}
+.__m-4{margin:40px;}
+.__m-5{margin:50px;}
+.__m-6{margin:60px;}
 
 .__pt-0{padding-top:0px !important;}
 .__pt-1{padding-top:10px !important;}
@@ -98,12 +105,12 @@ body{margin:0; padding:0;}
 .__py-4{padding-top:40px; padding-bottom:40px;}
 .__py-5{padding-top:50px; padding-bottom:50px;}
 
-.__p-0{padding:0px; padding:0px;}
-.__p-1{padding:10px; padding:10px;}
-.__p-2{padding:20px; padding:20px;}
-.__p-3{padding:30px; padding:30px;}
-.__p-4{padding:40px; padding:40px;}
-.__p-5{padding:50px; padding:50px;}
+.__p-0{padding:0px; }
+.__p-1{padding:10px; }
+.__p-2{padding:20px; }
+.__p-3{padding:30px; }
+.__p-4{padding:40px; }
+.__p-5{padding:50px; }
 
 /***********************************
    Text

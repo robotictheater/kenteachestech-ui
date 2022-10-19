@@ -7,7 +7,7 @@ __.js = {
         
       students.push(dataToPush);
     });
-    //console.log(students);
+
     w3.addClass("#noStudentsMessage", "w3-hide");
     w3.displayObject("studentsHolder", { "students": students });
     w3.removeClass("#studentGrid", "w3-hide");

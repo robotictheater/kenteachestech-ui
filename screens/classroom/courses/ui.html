@@ -1,0 +1,82 @@
+<div class="page-banner __py-2 w3-text-white __my-3">
+  <div class="w3-container thin-container">
+    <h1>Available Courses</h1>
+  </div>
+</div>
+
+<div class="__mt-3 w3-container thin-container">
+  <div class="w3-row __mt-5">
+    <div class="w3-col">
+      <h4 style="border-bottom:1px solid #e0e0e0;">Modern Web Development</h4>
+      <p>The web development path is for the student who is interested in software development. It will take the student who has no experience programming and by the end of the course </p>
+      <div class="w3-row" id="webCourseList">
+
+        <div class="w3-col m4 s12" w3-repeat="webCourses">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">
+            <h5 class="w3-text-blue">{{name}}</h5>
+            <div>{{description}} <a href="/classroom/course/details/{{id}}">More ...</a></div>
+            <div class="w3-center __mt-2 {{hideIfEnrolled}}"><button class="w3-button w3-blue" onclick="__.js.enroll('{{id}}');">Enroll</button></div>
+          </div>
+        </div>
+        
+       <!-- <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">
+            <h5 class="w3-text-blue">1. Introduction To Developer Tools</h5>
+            Learn about code editors, source control, hosting your projects and using the browsers developer console.
+          </div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">
+            <h5 class="w3-text-blue">2. HTML & CSS</h5>
+            Learn how to use HTML & CSS along with modern web design principles to develop effective user interfaces (UI).
+          </div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">3. Introduction To Programming With Javascript</div>
+        </div>
+        
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">
+            <h5 class="w3-text-blue">4. Advanced Web API's</h5>
+            
+          </div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">5. Backend Development With NodeJS</div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">6. Databases</div>
+        </div>
+      </div>
+
+      <div class="w3-row">
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">Wireframing & Storyboarding</div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">Packaging Your Webapp For Desktop & Native App Stores</div>
+        </div>
+        <div class="w3-col m4 s12">
+          <div class="w3-card __m-1 __p-1" style="height:200px;">Web Dev Capstone Project</div>
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+
+  <div class="w3-row __mt-5">
+    <div class="w3-col">
+       <h4 style="border-bottom:1px solid #e0e0e0;">Video Game Design & Development</h4>
+    </div>
+  </div>
+
+  <div class="w3-row __mt-5">
+    <div class="w3-col">
+       <h4 style="border-bottom:1px solid #e0e0e0;">Microcontrollers & Robotics</h4>
+    </div>
+  </div>
+  
+</div>

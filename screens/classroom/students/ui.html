@@ -15,8 +15,7 @@
     <div class="w3-col">      
       <div id="studentsHolder">
         <p id="noStudentsMessage" class="w3-center __mt-3">You have not added any students yet. Click the "Add Student" button to continue.</p>
-        <div id="studentGrid" class="w3-hide" w3-repeat="students">
-          
+        <div id="studentGrid" class="w3-hide" w3-repeat="students">          
           <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger" onclick="__.routeTo('/classroom/students/details/{{username}}')">
             {{first_name}}
           </div>

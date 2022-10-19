@@ -1,25 +1,33 @@
-<div class="page-banner __py-2 w3-text-white">
+<div class="page-banner __py-2 w3-text-white __my-3">
   <div class="w3-container thin-container">
     <h1>Dashboard</h1>
   </div>
 </div>
 
+
 <div class="__mt-3 w3-container thin-container">
+<div class="w3-row __mb-5">
+    <div class="w3-col">
+      <h4 style="border-bottom:1px solid #e0e0e0;">Need Help? Have Questions?</h4> 
+      <p class="__my-3">If you need help, have a question or need to get in touch, I try to make it easy to contact me. Please feel free to contact me directly via any of the methods below.</p>
+      <div class="w3-col m3"><b>Email</b><br><a href="mailto:ken@kenteachestech.com">ken@kenteachestech.com</a></div>
+      <div class="w3-col m2"><b>Text</b><br>716.589.0536</div>
+      <div class="w3-col m2"><b>Discord</b><br>kenteachestech</div>
+      <div class="w3-col m3"><b>Google Chat</b><br>ken.kozaczka@gmail.com</div>
+    </div>
+</div>
+  
   <div class="w3-row">
     <div class="w3-col">
-      <h4 style="border-bottom:1px solid #e0e0e0;">Current Course</h4>      
-      <div style="width:250px; height:250px;" class="w3-grey">?</div>
+      <h4 style="border-bottom:1px solid #e0e0e0;">My Courses</h4>      
+      <div id="courseList" class="w3-hide">          
+        <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger __mt-2" onclick="__.routeTo('/classroom/course/{{course_id}}')" w3-repeat="courses">
+          {{name}}
+        </div>
+      </div>
+      <p id="noCourses" class="w3-center __mt-3">You have not enrolled in any courses yet.<br><a href="/classroom/courses" class="w3-btn w3-red __mt-2">Click here to get started.</a></p>
     </div>
   </div>
 
-  <div class="w3-row __mt-5">
-    <div class="w3-col">
-      <h4 style="border-bottom:1px solid #e0e0e0;">New Messages From Ken</h4> 
-      <div id="announcementHolder">
-        
-        
-        <p class="w3-center __mt-3">There are no messages at this time.</p>
-      </div>
-    </div>
-  </div>
+  
 </div>

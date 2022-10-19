@@ -1,16 +1,14 @@
 <div class="page-banner __py-2 w3-text-white">
   <div class="w3-container thin-container">
-    <h1>My Students</h1>
+    <h1>Student Details</h1>
   </div>
 </div>
 
 <div id="studentDetails" class="__mt-3 w3-container thin-container">
-  
 
-  <div class="w3-row __mt-3">
-    <div class="w3-col">      
-      <h3>Student Details</h3>
-    </div>
+  <div class="w3-bar w3-border w3-light-grey _mb-3">
+      <a onclick="sectionNav('details');" id="sectionNav-details" class="sectionNav w3-bar-item w3-button w3-blue">Details</a>
+      <a onclick="sectionNav('courses');" id="sectionNav-courses" class="sectionNav w3-bar-item w3-button">Course Progress</a>
   </div>
 
   <div class="w3-row __mt-3">
@@ -30,10 +28,19 @@
   <div class="w3-row __mt-3">
     <div class="w3-col">
       <label>Username</label>
-     <input type="text" id="username" name="username" placeholder="Letters, numbers, dashes and underscores only.  Once set this value can not be changed" class="w3-input" onchange="__.js.checkUsername();" />
+     <input type="text" id="username" name="username" placeholder="Letters, numbers, dashes and underscores only.  Once set this value can not be changed" class="w3-input" onchange="__.js.checkUsername();"  required />
       <label class="w3-text-grey"></label>
     </div>
   </div>
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">
+      <label>Email</label>
+     <input type="text" id="email" name="email" placeholder="Email address to be used to communicate about course work" class="w3-input" required />
+      <label class="w3-text-grey"></label>
+    </div>
+  </div>
+  
   <div class="w3-row __mt-3">
     <div class="w3-col">
       <label>Password</label>
@@ -50,7 +57,7 @@
     <div class="w3-col">    
       <label>Student Age</label>
       <select id="age" name="age" class="w3-input w3-white">
-        <option>Select</option>
+        <option value="">Select</option>
         <option>10</option>
         <option>11</option>
         <option>12</option>
@@ -60,6 +67,19 @@
         <option>16</option>
         <option>17</option>
         <option>18</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="w3-row __mt-3">
+    <div class="w3-col">    
+      <label>Enrolled Course Path</label>
+      <select id="path" name="path" class="w3-input w3-white" required>
+        <option value="">No course selected</option>
+        <option value="webdev">Web Development</option>        
+        <option value="gamedev">Video Game Development</option>
+        <option value="microcontrollers">Microcontrollers & Robotics</option>
+        <option value="electronics">Electronics</option>
       </select>
     </div>
   </div>
