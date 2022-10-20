@@ -184,6 +184,10 @@ var __ = {
     }
   },
 
+  updateLocationBar: function(url, includeQS) {
+    window.history.pushState('', '', url + ((includeQS) ? window.location.search : ""));
+  },
+
   appendToLocation: function(val, includeQS) {
     window.history.pushState('', '', ((window.location.pathname.substr(window.location.pathname.length - 1) === "/") ? window.location.pathname.substr(0, window.location.pathname.length - 1) : window.location.pathname) + val + ((includeQS) ? window.location.search : ""));
   },

@@ -7,31 +7,11 @@ __.models.courses = {
       "lessons": [
         {
           "id": "browsers",
-          "name": "Browsers",
-          "cards": [
-            {
-              "type": "info",
-              "text": "<p>The purpose of most every program written is to do something with data. To do something with data you need to accept, store, manipulate and display it back out to the user.</p>"
-            },
-            {
-              "type": "info",
-              "heading": "Numbers",
-              "text": `<p>The first data type we're going to talk about is <b>Numbers</b>. `
-            },
-            {
-              "id": "browser-console-inspect",
-              "type": "assignment",
-              "heading": "Inspect A Site Using The Developer console",
-              "text": `<p>Using your browsers developer console, inspect the javascript on following page:</p>
-              <p class="w3-center"><a href="">https://kenteachestech.com/demos/intro-to-dev-tools/browser</a></p>
-              <p>Change the heading text and style, then take a screenshot and email it to assignments@kenteachestech.com</p>
-              `
-            },
-          ]
+          "name": "Browsers"
         },
         {
-          "id": "editor",
-          "name": "Code Editor"
+          "id": "code-editors",
+          "name": "Code Editors"
         },
         {
           "id": "source-control",

@@ -1,6 +1,6 @@
 <div class="page-banner __py-2 w3-text-white __my-3">
   <div class="w3-container thin-container">
-    <h1 id="courseHeading"></h1>
+    <h1 id="courseHeading" class="__pointer" onclick="__.js.goToLessonList()"></h1>
   </div>
 </div>
 
@@ -9,7 +9,23 @@
     <div class="w3-col w3-right-align"><button class="w3-button w3-border w3-border-red">I Have a Question</button></div>
   </div>
   <div class="w3-row">
-    <div class="w3-col" id="lessonHolder">      
+    <div class="w3-col w3-hide" id="lessonList">
+      <h2>Course Lesson List</h2>
+      <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger __mt-2" onclick="__.routeTo('/classroom/course/{{course_id}}/{{id}}')" w3-repeat="lessons">
+        {{name}}
+      </div>
+    </div>
+    <div class="w3-col" id="lessonHolder"></div>
+  </div>
+  <div class="w3-row __my-3 w3-hide" id="lessonNav">
+    <div class="w3-col m4 l4">
+      <button class="w3-button w3-blue" id="previousLesson" onclick="__.js.previousLesson()">Previous Lesson</button>
+    </div>
+    <div class="w3-col m4 l4 w3-center">
+      <button class="w3-button w3-border w3-border-grey" id="lessonListButton" onclick="__.js.goToLessonList()">Lesson Index</button>
+    </div>
+    <div class="w3-col m4 l4 w3-right-align">
+      <button class="w3-button w3-blue" id="nextLesson" onclick="__.js.nextLesson()">Next Lesson</button>
     </div>
   </div>
 </div>

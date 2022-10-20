@@ -1,8 +1,8 @@
-__.js.page_title["browsers"] = "Browsers";
-__.js.cards["browsers"] = [
+__.js.page_title["code-editors"] = "Code Editors";
+__.js.cards["code-editors"] = [
   {
     "type": "info",
-    "text": "<p>Browser are the #1 tool for web developers. In this lesson you will learn to use the Developer Console to aid in building, testing and debugging your web application.</p>"
+    "text": "<p>The code editor you choose is a personal choice.</p>"
   },
   {
     "type": "info",
@@ -11,7 +11,6 @@ __.js.cards["browsers"] = [
 On Windows, I would recommend installing Chrome or Brave, Firefox and Microsoft Edge.</p> `
   },
   {
-    "id": "browser-console-inspect",
     "type": "assignment",
     "heading": "Inspect A Site Using The Developer console",
     "text": `<p>Using your browsers developer console, inspect the javascript on following page:</p>
