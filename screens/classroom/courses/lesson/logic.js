@@ -33,7 +33,11 @@ __.js = {
   displayLessonList: function() {
     let lessons = [];
     __.models.courses.data[__.params.courseId].lessons.forEach(lesson => {
-      lessons.push(Object.assign({ "course_id": __.params.courseId }, lesson))
+      let courseColor = "w3-white";
+      if (__.models.accounts.currentStudent().courses[__.params.courseId].lessons.indexOf(lesson.id) >= 0) {
+        courseColor = "w3-pale-green";
+      }
+      lessons.push(Object.assign({ "course_id": __.params.courseId, "course_color": courseColor }, lesson))
     });
     w3.displayObject("lessonList", { "lessons": lessons });
   },
@@ -64,15 +68,21 @@ __.js = {
 
         //Assignment indicator
         assignmentColor = " w3-pale-red";
+        assignmentComplete = false;
+        assignmentFeedback = "";
+
         if (card.type === "assignment"
           && card.id
           && typeof __.models.accounts.currentStudent().courses[__.params.courseId] !== "undefined"
           && typeof __.models.accounts.currentStudent().courses[__.params.courseId].assignments[card.id] !== "undefined") {
           //This is an assignment and completed. Set to green
           assignmentColor = " w3-pale-green";
+          assignmentComplete = true;
+          assignmentFeedback = __.models.accounts.currentStudent().courses[__.params.courseId].assignments[card.id].feedback;
         }
 
-        html += `<div class="w3-card __p-2 __my-3${((card.type === "assignment") ? assignmentColor : (card.type === "try") ? " w3-sand" : "")}">`;
+        html += `<div class="w3-card __p-2 __my-3${((card.type === "assignment") ? assignmentColor : (card.type === "try") ? " w3-sand" : "")}" id="${card.id}">`;
+
         if (card.heading) {
           html += `<h3 class="__m-0">${card.heading}</h3>`;
         }
@@ -81,6 +91,28 @@ __.js = {
         }
         if (card.code) {
           html += `<div class="w3-code ${((card.code.lang === "js") ? "jsHigh" : "cssHigh")} notranslate">${card.code.src}</div>`;
+        }
+
+        if (card.type === "assignment" && !assignmentComplete) {
+
+          card.inputs.forEach(i => {
+            let inputHtml = "";
+            switch (i.type) {
+              case "textarea":
+                inputHtml = `<label><b>${i.label}</b></label><textarea rows="6" class="w3-input" name="${i.id}"></textarea>`;
+                break;
+              default:
+                inputHtml = `<label><b>${i.label}</b></label><input type="${i.type}" class="w3-input" name="${i.id}">`;
+                break;
+            }
+
+            html += `<div class="__my-2">${inputHtml}</div>`;
+          });
+
+
+          html += `<div class="w3-center"><button class="w3-button w3-red" id="${card.id}Submit" onclick="__.js.submitAssignment('${card.id}');">Submit</button></div>`;
+        } else if (card.type === "assignment" && assignmentComplete && assignmentFeedback) {
+          html += `<div class="__my-3 __p-2 w3-border w3-white"><b>Ken's Feedback:</b><br>${assignmentFeedback}</div>`
         }
 
         html += "</div>";
@@ -92,6 +124,21 @@ __.js = {
     } else {
 
     }
+
+  },
+
+  submitAssignment: function(assignmentId) {
+    __.ui.loading.button(assignmentId + "Submit");
+
+    __.models.courses.submitAssignment(Object.assign({ "assignment_id": assignmentId }, __.getFormData(assignmentId))).then(() => {
+      __.toast("Your answers have been sent", "w3-green");
+      __.ui.loading.button(assignmentId + "Submit", true);
+      document.getElementById(assignmentId + "Submit").setAttribute("disabled", "disabled");
+    }).catch((e) => {
+      console.log("submitAssignment Threw Error:", e);
+      __.toast("There was an error submitting your answers. Please refresh the page and try again", "w3-red");
+    });
+
 
   },
 

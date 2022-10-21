@@ -1,5 +1,14 @@
 __.models.accounts = {
   data: null,
+
+  type: function(checkIf) {
+    if (checkIf) {
+      return (__.models.accounts.data.session.user_type.toLowerCase() === checkIf.toLowerCase())
+    } else {
+      return __.models.accounts.data.session.user_type
+    }
+  },
+
   currentStudent: function() {
     if (__.models.accounts.data.session.username) {
       return __.models.accounts.data.students[__.models.accounts.data.session.username];

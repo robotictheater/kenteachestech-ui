@@ -65,8 +65,20 @@ __.models.courses = {
       "lessons": [],
       "prereq": ["intro-to-programming"]
     }
+  },
+  submitAssignment: function(dataToSave) {
+    return new Promise(function(resolve, reject) {
+      MONGOREALM.user.functions.assignmentSubmit(localStorage.getItem("session_id"), dataToSave).then((r) => {
+        if (r) {
+          if (r.success) {
+            resolve();
+          } else {
+            reject(((r && r.details) ? r.details : ""));
+          }
+        }
+      }).catch(reject);
+    });
   }
-
 
 
 }

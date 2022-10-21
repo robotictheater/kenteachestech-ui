@@ -1,8 +1,9 @@
 __.js = {
   load: function() {
-    this.displayMyCourses();
-
-
+    if (__.models.accounts.type("student")) {
+      this.displayMyCourses();
+      w3.removeClass("#courseContainer", "w3-hide");
+    }
   },
 
   displayMyCourses: function() {

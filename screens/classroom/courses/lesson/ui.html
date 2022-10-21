@@ -11,10 +11,11 @@
   <div class="w3-row">
     <div class="w3-col w3-hide" id="lessonList">
       <h2>Course Lesson List</h2>
-      <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger __mt-2" onclick="__.routeTo('/classroom/course/{{course_id}}/{{id}}')" w3-repeat="lessons">
+      <div class="w3-border __py-2 __px-2 __pointer __hover w3-card __bigger __mt-2 {{course_color}}" onclick="__.routeTo('/classroom/course/{{course_id}}/{{id}}')" w3-repeat="lessons">
         {{name}}
       </div>
     </div>
+    
     <div class="w3-col" id="lessonHolder"></div>
   </div>
   <div class="w3-row __my-3 w3-hide" id="lessonNav">

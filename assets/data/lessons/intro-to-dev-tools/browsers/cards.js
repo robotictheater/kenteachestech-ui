@@ -13,7 +13,19 @@ On Windows, I would recommend installing Chrome or Brave, Firefox and Microsoft 
   {
     "id": "browser-console-inspect",
     "type": "assignment",
-    "heading": "Inspect A Site Using The Developer console",
+    "inputs": [
+      {
+        "id": "variable-value",
+        "type": "text",
+        "label": "Variable Value"
+      },
+      {
+        "id": "screenshot",
+        "type": "text",
+        "label": "URL of screenshot"
+      }
+    ],
+    "heading": "Assignment: Use the console to inspect a sites variables",
     "text": `<p>Using your browsers developer console, inspect the javascript on following page:</p>
     <p class="w3-center"><a href="">https://kenteachestech.com/demos/intro-to-dev-tools/browser</a></p>
     `

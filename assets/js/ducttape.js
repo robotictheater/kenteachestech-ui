@@ -389,15 +389,30 @@ var __ = {
     return !isInvalid;
   },
 
+  getFormFile: function(el, cb) {
+
+      let file = el.files[0];
+      let fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = function() {
+        cb(null, fileReader.result);
+      };
+      fileReader.onerror = function() {
+        cb(fileReader.error, null);
+      };
+
+  },
   /*********************************************
       GET FORM DATA
   ******************************************** */
   getFormData: function(id) {
     var dtr = {};
     document.querySelectorAll("#" + id + " input, #" + id + " select, #" + id + " textarea, #" + id + " range").forEach(function(el) {
-      el.value = el.value.trim();
+      //el.value = el.value.trim();
 
-      if ((el.getAttribute("type") !== "checkbox" && el.getAttribute("type") !== "radio") || (el.getAttribute("type") === "checkbox" && el.checked) || (el.getAttribute("type") === "radio" && el.checked)) {
+      if (el.getAttribute("type") === "file") {
+         dtr[el.name] = el;
+      } else if ((el.getAttribute("type") !== "checkbox" && el.getAttribute("type") !== "radio") || (el.getAttribute("type") === "checkbox" && el.checked) || (el.getAttribute("type") === "radio" && el.checked)) {
         if (typeof dtr[el.name] === "undefined") {
 
           if (el.getAttribute("storeas") === "array") {
