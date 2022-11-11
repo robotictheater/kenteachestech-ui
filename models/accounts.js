@@ -103,6 +103,20 @@ __.models.accounts = {
     });
   },
 
+  updateStudent: function(dataToSave) {
+    return new Promise(function(resolve, reject) {
+      MONGOREALM.user.functions.accountStudentUpdate(localStorage.getItem("session_id"), dataToSave).then((r) => {
+        if (r) {
+          if (r.success) {
+            resolve();
+          } else {
+            reject(((r && r.details) ? r.details : ""));
+          }
+        }
+      }).catch(reject);
+    });
+  },
+
   verifyUsernamePassword: function(dataToSend) {
     return new Promise(function(resolve, reject) {
       MONGOREALM.user.functions.verifyUsernamePassword(dataToSend).then((r) => {

@@ -6,6 +6,7 @@ var __ = {
   components: {},
   loading: 0,
   params: {},
+  data: {},
   js: null,
   console: console,
   currentScript: document.currentScript,
@@ -391,15 +392,15 @@ var __ = {
 
   getFormFile: function(el, cb) {
 
-      let file = el.files[0];
-      let fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = function() {
-        cb(null, fileReader.result);
-      };
-      fileReader.onerror = function() {
-        cb(fileReader.error, null);
-      };
+    let file = el.files[0];
+    let fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = function() {
+      cb(null, fileReader.result);
+    };
+    fileReader.onerror = function() {
+      cb(fileReader.error, null);
+    };
 
   },
   /*********************************************
@@ -411,7 +412,7 @@ var __ = {
       //el.value = el.value.trim();
 
       if (el.getAttribute("type") === "file") {
-         dtr[el.name] = el;
+        dtr[el.name] = el;
       } else if ((el.getAttribute("type") !== "checkbox" && el.getAttribute("type") !== "radio") || (el.getAttribute("type") === "checkbox" && el.checked) || (el.getAttribute("type") === "radio" && el.checked)) {
         if (typeof dtr[el.name] === "undefined") {
 

@@ -1,6 +1,4 @@
 __.js = {
-  page_title: {},
-  cards: {},
   getLessonStudentIsOn: function() {
     __.models.accounts.data.students[__.models.accounts.data.session.username].courses[__.params.courseId].lessons
 
@@ -15,6 +13,7 @@ __.js = {
 
   loadLesson: function() {
     __.load([`/assets/data/lessons/${__.params.courseId}/${__.params.lessonId}/cards`], function() {
+
       __.js.displayPageHeading();
       __.js.displayCards();
     });
@@ -60,25 +59,37 @@ __.js = {
       document.getElementById("nextLesson").setAttribute("disabled", "disabled");
     }
 
-    if (__.js.cards[__.params.lessonId]) {
+    if (__.data.cards[__.params.lessonId]) {
 
-      let html = `<h2>${__.js.page_title[__.params.lessonId]}</h2>`;
+      let html = `<h2>${__.data.page_title[__.params.lessonId]}</h2>`;
       let assignmentColor = "";
-      __.js.cards[__.params.lessonId].forEach(card => {
+      __.data.cards[__.params.lessonId].forEach(card => {
 
         //Assignment indicator
         assignmentColor = " w3-pale-red";
         assignmentComplete = false;
-        assignmentFeedback = "";
+        let assignment = null;
 
         if (card.type === "assignment"
           && card.id
           && typeof __.models.accounts.currentStudent().courses[__.params.courseId] !== "undefined"
           && typeof __.models.accounts.currentStudent().courses[__.params.courseId].assignments[card.id] !== "undefined") {
           //This is an assignment and completed. Set to green
-          assignmentColor = " w3-pale-green";
+
           assignmentComplete = true;
-          assignmentFeedback = __.models.accounts.currentStudent().courses[__.params.courseId].assignments[card.id].feedback;
+          assignment = __.models.accounts.currentStudent().courses[__.params.courseId].assignments[card.id];
+
+          switch (assignment.grade) {
+            case 1:
+              assignmentColor = " w3-pale-yellow";
+              break;
+            case 2:
+              assignmentColor = " w3-pale-blue";
+              break;
+            case 3:
+              assignmentColor = " w3-pale-green";
+              break;
+          }
         }
 
         html += `<div class="w3-card __p-2 __my-3${((card.type === "assignment") ? assignmentColor : (card.type === "try") ? " w3-sand" : "")}" id="${card.id}">`;
@@ -95,24 +106,26 @@ __.js = {
 
         if (card.type === "assignment" && !assignmentComplete) {
 
-          card.inputs.forEach(i => {
-            let inputHtml = "";
-            switch (i.type) {
-              case "textarea":
-                inputHtml = `<label><b>${i.label}</b></label><textarea rows="6" class="w3-input" name="${i.id}"></textarea>`;
-                break;
-              default:
-                inputHtml = `<label><b>${i.label}</b></label><input type="${i.type}" class="w3-input" name="${i.id}">`;
-                break;
-            }
+          if (card.inputs) {
+            card.inputs.forEach(i => {
+              let inputHtml = "";
+              switch (i.type) {
+                case "textarea":
+                  inputHtml = `<label><b>${i.label}</b></label><textarea rows="6" class="w3-input" name="${i.id}"></textarea>`;
+                  break;
+                default:
+                  inputHtml = `<label><b>${i.label}</b></label><input type="${i.type}" class="w3-input" name="${i.id}">`;
+                  break;
+              }
 
-            html += `<div class="__my-2">${inputHtml}</div>`;
-          });
+              html += `<div class="__my-2">${inputHtml}</div>`;
+            });
 
 
-          html += `<div class="w3-center"><button class="w3-button w3-red" id="${card.id}Submit" onclick="__.js.submitAssignment('${card.id}');">Submit</button></div>`;
-        } else if (card.type === "assignment" && assignmentComplete && assignmentFeedback) {
-          html += `<div class="__my-3 __p-2 w3-border w3-white"><b>Ken's Feedback:</b><br>${assignmentFeedback}</div>`
+            html += `<div class="w3-center"><button class="w3-button w3-red" id="${card.id}Submit" onclick="__.js.submitAssignment('${card.id}');">Submit</button></div>`;
+          }
+        } else if (card.type === "assignment" && assignmentComplete && assignment.feedback) {
+          html += `<div class="__my-3 __p-2 w3-border w3-white"><b>Ken's Feedback:</b><br>${assignment.feedback}</div>`
         }
 
         html += "</div>";

@@ -1,5 +1,5 @@
-__.js.page_title["browsers"] = "Browsers";
-__.js.cards["browsers"] = [
+__.data.page_title["browsers"] = "Browsers";
+__.data.cards["browsers"] = [
   {
     "type": "info",
     "text": "<p>Browser are the #1 tool for web developers. In this lesson you will learn to use the Developer Console to aid in building, testing and debugging your web application.</p>"

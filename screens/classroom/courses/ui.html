@@ -15,7 +15,8 @@
           <div class="w3-card __m-1 __p-1" style="height:200px;">
             <h5 class="w3-text-blue">{{name}}</h5>
             <div>{{description}} <a href="/classroom/course/details/{{id}}">More ...</a></div>
-            <div class="w3-center __mt-2 {{hideIfEnrolled}}"><button class="w3-button w3-blue" onclick="__.js.enroll('{{id}}');">Enroll</button></div>
+            <div class="w3-center __mt-2 {{hideIfEnrolled}}"><button class="w3-button w3-blue" onclick="__.js.enroll('{{id}}');">Start</button></div>
+            <div class="w3-center __mt-2 {{showIfEnrolled}}"><button class="w3-button w3-blue" onclick="__.routeTo('/classroom/courses/{{id}}');">Resume</button></div>
           </div>
         </div>
         

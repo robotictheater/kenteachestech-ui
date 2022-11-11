@@ -11,7 +11,14 @@ __.js = {
     if (__.models.accounts.data.students[__.params.studentId]) {
       __.setFormData("studentDetails", Object.assign({}, __.models.accounts.data.students[__.params.studentId], { "username": __.params.studentId }));
       document.getElementById("username").setAttribute("disabled", "disabled");
+
+      __.models.progressreports.get(__.params.studentId).then(reports => {
+        console.log(reports);
+      }).catch(e => {
+        console.log(e);
+      });
     }
+
 
   },
 
@@ -69,7 +76,7 @@ __.js = {
       __toast("Passwords do not match. Please correct and try again!", "w3-red");
       __.ui.loading.button("saveButton", true);
     } else {
-      __.models.accounts.accountUpdateStudent(formData).then((r) => {
+      __.models.accounts.updateStudent(formData).then((r) => {
         __toast("Student information updated successfully", "w3-green");
         __.ui.loading.button("saveButton", true);
       }).catch(e => {
@@ -77,9 +84,6 @@ __.js = {
         __.ui.loading.button("saveButton", true);
       });
     }
-
-
-
   },
 
 
@@ -105,5 +109,7 @@ __.js = {
 };
 
 (function() {
-  __.js.load();
+  __.load(["/models/progressreports"], function() {
+    __.js.load();
+  });
 })();

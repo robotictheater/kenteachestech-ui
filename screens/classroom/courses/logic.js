@@ -5,7 +5,11 @@ __.js = {
 
     let webCourses = [];
     webCourseIds.forEach(function(webCourseId) {
-      webCourses.push(Object.assign({}, { "id": webCourseId, "hideIfEnrolled": (((__.models.accounts.currentStudent() && __.models.accounts.currentStudent().courses[webCourseId]) || __.models.accounts.type("parent")) ? " w3-hide" : "") }, __.models.courses.data[webCourseId]));
+      webCourses.push(Object.assign({}, {
+        "id": webCourseId,
+        "hideIfEnrolled": (((__.models.accounts.currentStudent() && __.models.accounts.currentStudent().courses[webCourseId]) || __.models.accounts.type("parent")) ? " w3-hide" : ""),
+        "showIfEnrolled": (((__.models.accounts.currentStudent() && __.models.accounts.currentStudent().courses[webCourseId]) && !__.models.accounts.type("parent")) ? "" : " w3-hide")
+      }, __.models.courses.data[webCourseId]));
     });
 
     w3.displayObject("webCourseList", { "webCourses": webCourses });

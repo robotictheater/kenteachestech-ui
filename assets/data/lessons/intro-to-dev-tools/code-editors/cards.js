@@ -1,5 +1,5 @@
-__.js.page_title["code-editors"] = "Code Editors";
-__.js.cards["code-editors"] = [
+__.data.page_title["code-editors"] = "Code Editors";
+__.data.cards["code-editors"] = [
   {
     "type": "info",
     "text": "<p>The code editor you choose is a personal choice.</p>"
