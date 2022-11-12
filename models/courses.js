@@ -30,7 +30,31 @@ __.models.courses = {
 
     },
     "intro-to-programming": {
-      "name": "Introducton To Programming With Javascript",
+      "name": "Introducton To Programming Concepts",
+      "icon": "",
+      "description": "",
+      "lessons": [
+        {
+          "id": "data-types",
+          "name": "Data Types"
+        },
+        {
+          "id": "variables",
+          "name": "Variables"
+        },
+        {
+          "id": "comparison-operators",
+          "name": "Comparison Operators"
+        },
+        {
+          "id": "conditionals",
+          "name": "Conditionals"
+        }
+      ],
+      "prereq": ["intro-to-dev-tools"]
+    },
+    "intro-to-js": {
+      "name": "Introducton To JavaScript",
       "icon": "",
       "description": "",
       "lessons": [

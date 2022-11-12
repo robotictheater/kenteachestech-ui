@@ -1,7 +1,7 @@
 __.js = {
   load: function() {
 
-    let webCourseIds = ["intro-to-dev-tools", "html-css", "intro-to-programming", "advanced-web-apis"];
+    let webCourseIds = ["intro-to-dev-tools", "html-css", "intro-to-programming", "intro-to-js", "advanced-web-apis"];
 
     let webCourses = [];
     webCourseIds.forEach(function(webCourseId) {

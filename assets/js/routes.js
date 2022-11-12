@@ -17,15 +17,20 @@ __.routes = [
     } else {
       __.load(["/models/accounts", "/models/courses"], function() {
         __.models.accounts.get().then(r => {
-          __.load(["/assets/js/site"], function() {
-            __.renderLayout("classroom", function() {
-              if (r.session.user_type === "parent") {
-                w3.removeClass(".parent-nav-item", "w3-hide");
-                w3.addClass(".student-nav-item", "w3-hide");
-              }
-              next();
+          if (r.locked) {
+            __.routeTo("/accountlocked");
+          } else {
+            __.load(["/assets/js/site"], function() {
+              __.renderLayout("classroom", function() {
+                if (r.session.user_type === "parent") {
+                  w3.removeClass(".parent-nav-item", "w3-hide");
+                  w3.addClass(".student-nav-item", "w3-hide");
+                }
+                next();
+              });
             });
-          });
+          }
+
         }).catch(e => {
           localStorage.removeItem("session_id");
           __.config.onLoginRouteTo = window.location.pathname;
@@ -122,6 +127,11 @@ __.routes = [
     });
   }],
 
+  ["/accountlocked/?$", (p) => {
+    __.renderLayout("login", function() {
+      __.renderScreen("accountlocked", p);
+    });
+  }],
 
   [".*", (p) => {
     console.log("here")
