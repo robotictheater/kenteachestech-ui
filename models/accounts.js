@@ -45,6 +45,36 @@ __.models.accounts = {
   },
 
   /**************************************************
+    UPDATE account info
+    dataToSend
+      {
+        "email":"",
+        "first_name":"",
+        "last_name":"",
+        
+      }
+
+    response data:
+     - 
+  ***************************************************/
+  update: function(dataToSave) {
+    return new Promise(function(resolve, reject) {
+      MONGOREALM.user.functions.accountUpdate(localStorage.getItem("session_id"), dataToSave).then((r) => {
+        if (r) {
+          if (r.success) {
+            __.models.accounts.data.first_name = dataToSave.first_name;
+            __.models.accounts.data.last_name = dataToSave.last_name;
+            __.models.accounts.data.email = dataToSave.email;
+            resolve(((r.data) ? r.data : null));
+          } else {
+            reject(r);
+          }
+        }
+      }).catch(reject);
+    });
+  },
+
+  /**************************************************
     GET  account by the session id
     - Sending the sessionid string
 

@@ -3,3 +3,32 @@
     <h1>Account</h1>
   </div>
 </div>
+
+<div id="accountDetails" class=" w3-container thin-container">
+  
+  <h4 class="__mt-4" style="border-bottom:1px solid #e0e0e0;">Account Information</h4> 
+  <div class="w3-row __mb-2">
+    <div class="w3-col">      
+      <input type="text" id="firstName" name="first_name" placeholder="First Name" class="w3-input" required />     
+    </div>
+  </div>
+  <div class="w3-row __mb-2">
+    <div class="w3-col">      
+      <input type="text" id="lastName" name="last_name" placeholder="Last Name" class="w3-input" required />      
+    </div>
+  </div>
+  <div class="w3-row">
+    <div class="w3-col">      
+      <input type="text" id="email" name="email" placeholder="Your Email" class="w3-input  __mb-2" required />
+      <input type="text" id="confirmEmail" name="confirm_email" placeholder="Confirm New Email" class="w3-input" />      
+      <div class="w3-tiny w3-text-blue"><b>NOTE:</b> If changing your email, you will be forced to login again using the new email provided.</div>
+      <button class="__mt-2 w3-btn w3-blue" onclick="__.js.saveChanges();" id="saveButton">Save Changes</button>
+    </div>
+  </div>
+
+
+
+  <h4 class="__mt-4" style="border-bottom:1px solid #e0e0e0;">Close Account</h4> 
+  <p>If you wish close your account or temporarily suspend payments please contact Ken at <a href="mailto:ken@kenteachestech.com">ken@kenteachestech.com</a></p>
+  
+</div>
