@@ -5,9 +5,20 @@
 </div>
 
 <div class="__mt-3 w3-container thin-container">
-  <div class="w3-row">
-    <div class="w3-col w3-right-align"><button class="w3-button w3-border w3-border-red">I Have a Question</button></div>
+      <div class="w3-row __my-3 w3-hide lessonNav">      
+    <div class="w3-col m4 l4">
+      <button class="w3-button w3-blue previousLesson" onclick="__.js.previousLesson()">Previous Lesson</button>
+    </div>
+    <div class="w3-col m4 l4 w3-center">
+      <button class="w3-button w3-border w3-border-grey lessonListButton" onclick="__.js.goToLessonList()">Lesson Index</button>
+    </div>
+    <div class="w3-col m4 l4 w3-right-align">
+      <button class="w3-button w3-blue nextLesson" onclick="__.js.nextLesson()">Next Lesson</button>
+    </div>
   </div>
+  
+ 
+  
   <div class="w3-row">
     <div class="w3-col w3-hide" id="lessonList">
       <h2>Course Lesson List</h2>
@@ -18,15 +29,15 @@
     
     <div class="w3-col" id="lessonHolder"></div>
   </div>
-  <div class="w3-row __my-3 w3-hide" id="lessonNav">
+  <div class="w3-row __my-3 w3-hide lessonNav">
     <div class="w3-col m4 l4">
-      <button class="w3-button w3-blue" id="previousLesson" onclick="__.js.previousLesson()">Previous Lesson</button>
+      <button class="w3-button w3-blue previousLesson" onclick="__.js.previousLesson()">Previous Lesson</button>
     </div>
     <div class="w3-col m4 l4 w3-center">
-      <button class="w3-button w3-border w3-border-grey" id="lessonListButton" onclick="__.js.goToLessonList()">Lesson Index</button>
+      <button class="w3-button w3-border w3-border-grey lessonListButton" onclick="__.js.goToLessonList()">Lesson Index</button>
     </div>
     <div class="w3-col m4 l4 w3-right-align">
-      <button class="w3-button w3-blue" id="nextLesson" onclick="__.js.nextLesson()">Next Lesson</button>
+      <button class="w3-button w3-blue nextLesson" onclick="__.js.nextLesson()">Next Lesson</button>
     </div>
   </div>
 </div>

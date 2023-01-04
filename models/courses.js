@@ -10,6 +10,10 @@ __.models.courses = {
           "name": "Browsers"
         },
         {
+          "id": "browsers-console",
+          "name": "Developer Console"
+        },
+        {
           "id": "code-editors",
           "name": "Code Editors"
         },

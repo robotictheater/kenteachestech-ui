@@ -15,7 +15,7 @@ body, h1, h2, h3, h4, h5, h6{
 a,
 a:visited,
 a:hover {
-  color: #ff5005;
+  color: #2196F3!important;
 }
 
 p {
@@ -56,6 +56,10 @@ section{
   width:100%;
   margin:100px auto;
   max-width: 1200px;
+}
+
+section.small{
+  max-width:750px;
 }
 
 hr{
@@ -108,4 +112,12 @@ hr{
 
 .page-banner a{
   color:#ffffff !important;
+}
+
+.blocklyOutput{
+  padding:10px;
+  margin-left:10px;
+  background:#ffffff;
+  height:480px;
+  overflow:scroll;
 }

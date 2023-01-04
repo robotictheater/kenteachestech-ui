@@ -605,10 +605,29 @@ var __ = {
             el.classList.add(className);
           }
         }
-      }
+      },
+      removeClass: function(selector, className) {
+        for (let el of document.querySelectorAll(selector)) {
+          if (el.classList.contains(className)) {
+            el.classList.remove(className);
+          }
+        }
+      },
+
+      setAttribute: function(selector, attrName, attrValue) {
+        for (let el of document.querySelectorAll(selector)) {
+          el.setAttribute(attrName, attrValue);
+        }
+      },
+
+      removeAttribute: function(selector, attrName) {
+        for (let el of document.querySelectorAll(selector)) {
+          el.removeAttribute(attrName);
+        }
+      },
     }
   },
-  toast: function(m, c) {
+  /*toast: function(m, c) {
 
     if (document.getElementById("__toast")) {
       document.getElementById("__toast").parentNode.removeChild(document.getElementById("__toast"));
@@ -624,11 +643,11 @@ var __ = {
 
     document.getElementById("__toast").className = c;
     setTimeout(function() { document.getElementById("__toast").className = document.getElementById("__toast").className.replace("showToast", ""); }, 3000);
-  }
+  }*/
 
 };
 
-window.__toast = function(m, c) {
+window.__toast = function(m, c, cb) {
 
   if (document.getElementById("__toast")) {
     document.getElementById("__toast").parentNode.removeChild(document.getElementById("__toast"));
@@ -643,7 +662,14 @@ window.__toast = function(m, c) {
   }
 
   document.getElementById("__toast").className = c;
-  setTimeout(function() { document.getElementById("__toast").className = document.getElementById("__toast").className.replace("showToast", ""); }, 3000);
+  setTimeout(function() {
+    if (document.getElementById("__toast")) {
+      document.getElementById("__toast").className = document.getElementById("__toast").className.replace("showToast", "");
+      if (typeof cb === "function") {
+        cb();
+      }
+    }
+  }, 3000);
 }
 
 window.isMobile = function() {

@@ -87,7 +87,9 @@ __.routes = [
 
   }],
 
-
+  ["/classroom/blockly/?$", (p) => {
+    __.renderScreen("classroom/blockly", p);
+  }],
 
 
   ["/login/?$", (p) => {

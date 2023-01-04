@@ -18,8 +18,9 @@ __.js = {
 
   enroll: function(courseId) {
     __.models.accounts.enrollStudent(courseId).then(() => {
-      __toast("Successfully Enrolled", "w3-green");
-      __.routeTo("/classroom/course/" + courseId);
+      __toast("Successfully Enrolled. Redirecting Now.", "w3-green", function() {
+        __.routeTo("/classroom/course/" + courseId);
+      });
     }).catch(() => {
       __toast("There was an error enrolling in this course. Please re-login and try again.", "w3-red");
     });

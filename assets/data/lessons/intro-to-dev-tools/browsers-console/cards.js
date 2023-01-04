@@ -1,5 +1,5 @@
-__.data.page_title["browsers"] = "Browsers";
-__.data.cards["browsers"] = [
+__.data.page_title["browsers-console"] = "The Browser's Developer Console";
+__.data.cards["browsers-console"] = [
   {
     "type": "info",
     "text": "<p>Browser are the #1 tool for web developers. In this lesson you will learn to use the Developer Console to aid in building, testing and debugging your web application.</p><p>The first thing you need to know is that it is possible for your website or webapp to look and/or function differently in different browsers. That's why it will be important to test your projects on as many different browser as possible.</p>"
@@ -19,12 +19,12 @@ __.data.cards["browsers"] = [
         "label": "Variable Value"
       },
       {
-        "id": "blockly-if",
-        "type": "blockly",
-        "label": "Create Your IF Statement"
+        "id": "screenshot",
+        "type": "text",
+        "label": "URL of screenshot"
       }
     ],
-    "heading": "Challenge: Use the console to inspect a sites variables",
+    "heading": "Assignment: Use the console to inspect a sites variables",
     "text": `<p>Using your browsers developer console, inspect the javascript on following page:</p>
     <p class="w3-center"><a href="">https://kenteachestech.com/demos/intro-to-dev-tools/browser</a></p>
     `
